@@ -1,0 +1,30 @@
+# Version control
+.git/
+.gitignore
+.gitattributes
+
+# IDE & Editor files
+.idea/
+.vscode/
+.settings/
+.project
+.classpath
+*.iml
+*.iws
+*.ipr
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Documentation & Markdown
+*.md
+docs/
+
+# Local logs
+*.log
+logs/
+
+# Do NOT ignore target/ or *.jar
+**/*.jar.original
