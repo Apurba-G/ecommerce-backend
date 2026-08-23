@@ -348,7 +348,7 @@ services:
       - "8761:8761"
     environment:
       SPRING_PROFILES_ACTIVE: docker
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     networks:
       - ecommerce-net
 
@@ -362,7 +362,7 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: docker
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       - discovery-server
     networks:
@@ -380,7 +380,7 @@ services:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
       SPRING_REDIS_HOST: redis
       SPRING_REDIS_PORT: 6379
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       - discovery-server
       - redis
@@ -403,7 +403,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       auth-postgres:
         condition: service_healthy
@@ -427,7 +427,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       user-postgres:
         condition: service_healthy
@@ -449,7 +449,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       product-postgres:
         condition: service_healthy
@@ -470,7 +470,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://product-postgres:5432/product_db
       SPRING_REDIS_HOST: redis
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       product-postgres:
         condition: service_healthy
@@ -489,7 +489,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://product-postgres:5432/product_db
       SPRING_REDIS_HOST: redis
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       product-postgres:
         condition: service_healthy
@@ -512,7 +512,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       inventory-postgres:
         condition: service_healthy
@@ -536,7 +536,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       cart-postgres:
         condition: service_healthy
@@ -557,7 +557,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://wishlist-postgres:5432/wishlist_db
       SPRING_REDIS_HOST: redis
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       wishlist-postgres:
         condition: service_healthy
@@ -578,7 +578,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       redis:
         condition: service_healthy
@@ -603,7 +603,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       order-postgres:
         condition: service_healthy
@@ -627,7 +627,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       payment-postgres:
         condition: service_healthy
@@ -650,7 +650,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://coupon-postgres:5432/coupon_db
       SPRING_REDIS_HOST: redis
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       coupon-postgres:
         condition: service_healthy
@@ -672,7 +672,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       shipping-postgres:
         condition: service_healthy
@@ -699,7 +699,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       review-postgres:
         condition: service_healthy
@@ -723,7 +723,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       notification-postgres:
         condition: service_healthy
@@ -747,7 +747,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       seller-postgres:
         condition: service_healthy
@@ -770,7 +770,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       redis:
         condition: service_healthy
@@ -792,7 +792,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       report-postgres:
         condition: service_healthy
@@ -816,7 +816,7 @@ services:
       SPRING_REDIS_HOST: redis
       SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
-      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+      JAVA_TOOL_OPTIONS: "-Xms64m -Xmx128m -XX:MaxMetaspaceSize=96m -XX:ReservedCodeCacheSize=32m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
     depends_on:
       audit-postgres:
         condition: service_healthy
